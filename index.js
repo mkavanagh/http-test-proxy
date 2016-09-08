@@ -39,8 +39,6 @@ http.createServer((req, res) => {
 
     req.pipe(upstream);
 
-    upstream.end();
-
     upstream.on('response', (response) => {
         console.log(`Received response after ${process.hrtime(startTime)[0]} seconds`, info);
 
