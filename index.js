@@ -21,7 +21,7 @@ const excludeUrls = new RegExp(command.exclude || '.^');
 http.createServer((req, res) => {
     const startTime = process.hrtime();
 
-    const shouldAlter = req.url.match(includeUrls.match) && !req.url.match(excludeUrls);
+    const shouldAlter = req.url.match(includeUrls) && !req.url.match(excludeUrls);
 
     const info = {startTime, url: req.url, shouldAlter};
 
