@@ -10,7 +10,7 @@ command.description('Proxy HTTP requests with optional alterations')
 .option('--delay [seconds]', 'wait (at least) the given number of seconds before responding')
 .option('--status [code]', 'return the given HTTP status code for all requests')
 .option('--include [regex]', 'alter only requests where the URL (/path?query) matches the given regex')
-.option('--exclude [regex]', 'exclude requests where the URL (/path?query) matches the given regex')
+.option('--exclude [regex]', 'do not alter requests where the URL (/path?query) matches the given regex')
 .parse(process.argv);
 
 const target = url.parse(command.args[0]);
