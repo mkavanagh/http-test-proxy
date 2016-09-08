@@ -65,5 +65,8 @@ http.createServer((req, res) => {
         } else {
             sendResponse();
         }
-    }).on('error', () => res.end('HTTP/1.1 400 Bad Request\r\n\r\n'));
+    }).on('error', () => {
+        res.writeHead(502);
+        res.end();
+    });
 }).listen(command.port);
